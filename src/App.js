@@ -25,8 +25,7 @@ function App() {
         </div>
         <div className="">
           <Routes>
-            <Route index element={<Home />} />
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/inventory" element={<Inventory />} />
             <Route path="/inventory/add-new" element={<AddNewItem />} />
