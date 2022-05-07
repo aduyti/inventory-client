@@ -5,5 +5,7 @@
 
 [Live](https://inventory-management-edcb6.web.app/)
 
+[issue](https://stackoverflow.com/questions/72152742/the-argument-must-be-a-react-element-but-you-passed-undefined)
+
 ### PACKAGES & LIBRARIES
 >  `React`, `firebase`, `react-router`, `axios`, `react-firebase-hooks`, `tailwind css`, `react-hook-form`, `rechart js`

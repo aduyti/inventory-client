@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
     return (
         <div className="border-2 rounded-lg border-gray-400 w-64 h-[400px] mx-auto mb-8 bg-white">
             <h3 className="text-2xl font-bold">{name}</h3>
-            <img src={image} alt={name} className="h-40 w-full rounded" />
+            <img src={image} alt={name} className="h-40 w-full rounded px-1" />
             <div className="text-left pl-3 text-slate-500 py-3">
                 <h4 className="text-xl font-semibold ">Supplier : {supplier}</h4>
                 {
