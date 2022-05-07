@@ -17,13 +17,13 @@ import { useState } from 'react';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="App text-slate-800 ">
+    <div className="App text-slate-800 relative">
       <Header menuState={[isOpen, setIsOpen]} />
-      <div className="grid grid-cols-[1px_1fr] md:grid-cols-[224px_1fr] md:gap-2">
+      <div className="grid grid-cols-[1px_1fr] md:grid-cols-[208px_1fr] ">
         <div className="relative">
           <NavSideBar menuState={[isOpen, setIsOpen]} />
         </div>
-        <div className="">
+        <div className="bg-blue-100/25 mt-16">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
