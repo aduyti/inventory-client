@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Utilities/Firebase/firebase.init';
 import Spinner from '../../Components/Spinner/Spinner';
+import ThirdPartyLogin from '../../Components/ThirdPartyLogin/ThirdPartyLogin';
 
 
 const Login = () => {
@@ -85,6 +86,7 @@ const Login = () => {
                     </p>
                 </div>
 
+                <ThirdPartyLogin>Login</ThirdPartyLogin>
             </div>
         </div>
     );
