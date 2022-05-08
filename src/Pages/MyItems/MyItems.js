@@ -7,7 +7,6 @@ import useProductsByEmail from '../../Utilities/Hooks/useProductsByEmail';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
-    console.log(user.email);
 
     const [products] = useProductsByEmail(user.email);
     return (

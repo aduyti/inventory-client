@@ -3,6 +3,7 @@ import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Spinner from '../../Components/Spinner/Spinner';
+import ThirdPartyLogin from '../../Components/ThirdPartyLogin/ThirdPartyLogin';
 import auth from '../../Utilities/Firebase/firebase.init';
 
 
@@ -71,6 +72,8 @@ const Register = () => {
                         <Link to="/login" className="text-blue-500 hover:text-red-500 cursor-pointer"> Login</Link>
                     </p>
                 </div>
+
+                <ThirdPartyLogin>Register</ThirdPartyLogin>
 
             </div>
         </div>

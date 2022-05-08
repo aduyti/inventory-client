@@ -1,12 +1,14 @@
 import { TrashIcon } from '@heroicons/react/outline';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import itemDelete from '../../Utilities/DBOperations/itemDelete';
 
 const ProductRow = ({ product }) => {
     const { _id, name, price, quantity, supplier, image } = product;
     const navigate = useNavigate();
     const handleDelete = id => {
-        console.log("delete", id);
+        itemDelete(id);
+        window.location.reload();
     }
 
     return (

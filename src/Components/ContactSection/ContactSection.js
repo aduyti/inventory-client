@@ -1,6 +1,6 @@
 import { HomeIcon, MailIcon, PhoneIcon } from '@heroicons/react/outline';
 import React from 'react';
-// import MapLocation from '../MapLocation/MapLocation';
+import MapLocation from '../MapLocation/MapLocation';
 
 const ContactSection = () => {
     return (
@@ -9,7 +9,7 @@ const ContactSection = () => {
 
             <div className="grid gap-4 grid-cols-1 lg:grid-cols-2 mx-5 mb-8">
                 <div className="border-2 rounded-lg border-gray-400 h-[350px] w-[350px] mx-auto">
-                    {/* <MapLocation /> */}
+                    <MapLocation />
                 </div>
 
                 <div className="h-[350px] w-[350px] mx-auto pl-10 pt-16">
