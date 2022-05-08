@@ -13,6 +13,10 @@ import Register from './Pages/Register/Register';
 import ProductManage from './Pages/ProductManage/ProductManage';
 import NotFound from './Pages/NotFound/NotFound';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +39,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>
+          <ToastContainer autoClose={1500} />
           <Footer />
         </div>
       </div>

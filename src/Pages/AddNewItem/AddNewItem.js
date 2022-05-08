@@ -1,5 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+
 import addNewProduct from '../../Utilities/DBOperations/addNewProduct';
 
 const AddNewItem = () => {
@@ -22,7 +24,7 @@ const AddNewItem = () => {
             ownerEmail: "mozibar@gmail.com"
         };
         addNewProduct(product);
-        window.alert("New Laptop added to Inventory");
+        toast("New Laptop added to Inventory");
         event.target.reset();
 
     }

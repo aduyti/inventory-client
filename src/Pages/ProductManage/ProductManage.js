@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Spinner from '../../Components/Spinner/Spinner';
 import updateItemQuantity from '../../Utilities/DBOperations/updateItemQuantity';
 import useProduct from '../../Utilities/Hooks/useProduct';
+import { toast } from 'react-toastify';
 
 const ProductManage = () => {
     const { id } = useParams();
@@ -15,7 +16,7 @@ const ProductManage = () => {
     }, [product])
 
     const setAlert = (target, callback) => {
-        window.alert("minimum value is 1");
+        toast("minimum value is 1");
         target.value = 1;
         callback(1);
     }
@@ -32,18 +33,18 @@ const ProductManage = () => {
 
     const handleDeliver = () => {
         if (quantity < deliver) {
-            window.alert("Over The Limit");
+            toast("Over The Limit");
         }
         else {
             setQuantity(quantity - deliver);
             updateItemQuantity(quantity - deliver, product?._id);
-            window.alert(`${deliver} ${product.name} delivered`);
+            toast(`${deliver} ${product.name} delivered`);
         }
     }
     const handleStock = () => {
         setQuantity(quantity + stock);
         updateItemQuantity(quantity + stock, product?._id);
-        window.alert(`${stock} ${product.name} stocked`);
+        toast(`${stock} ${product.name} stocked`);
     }
     return (
         <div className="p-10">
