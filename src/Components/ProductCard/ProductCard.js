@@ -19,9 +19,9 @@ const ProductCard = ({ product }) => {
                 <h4 className="text-xl font-semibold text-slate-500">{quantity}pcs</h4>
             </div>
             <button type="button"
-                className="w-full bg-cyan-500 rounded-b font-semibold py-1 "
+                className="w-full bg-cyan-500 hover:bg-cyan-700 hover:text-slate-200 rounded-b font-semibold py-1 "
                 onClick={() => {
-                    navigate(`./inventory/${_id}`)
+                    navigate(`/inventory/${_id}`)
                 }}>Manage</button>
         </div >
     );

@@ -1,9 +1,15 @@
 import React from 'react';
+import ProductRow from '../../Components/ProductRow/ProductRow';
+import useProducts from '../../Utilities/Hooks/useProducts';
 
 const Inventory = () => {
+    const [products] = useProducts();
     return (
-        <div>
-            inventory
+        <div className="p-10">
+            <h2 className="text-3xl font-bold text-cyan-600 pb-8">Laptops In Stock</h2>
+            {
+                products.map(product => <ProductRow key={product._id} product={product} />)
+            }
         </div>
     );
 };
