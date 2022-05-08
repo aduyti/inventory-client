@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Spinner from '../../Components/Spinner/Spinner';
@@ -23,17 +24,33 @@ const ProductManage = () => {
         num > 0 ? setDeliver(num) :
             setAlert(event.target, setDeliver);
     }
-    const handleDeliver = () => {
-        quantity < deliver ? window.alert("Over The Limit") :
-            setQuantity(quantity - deliver);
-    }
     const blurStock = event => {
         const num = parseInt(event.target.value);
         num > 0 ? setStock(num) :
             setAlert(event.target, setStock);
     }
+    const updateToDB = (newQuantity) => {
+        axios.put(`https://obscure-eyrie-55678.herokuapp.com/inventory/id/${product?._id}`, {
+            quantity: newQuantity
+        })
+            .then()
+
+    }
+
+    const handleDeliver = () => {
+        if (quantity < deliver) {
+            window.alert("Over The Limit");
+        }
+        else {
+            setQuantity(quantity - deliver);
+            updateToDB(quantity - deliver);
+            window.alert(`${deliver} ${product.name} delivered`);
+        }
+    }
     const handleStock = () => {
         setQuantity(quantity + stock);
+        updateToDB(quantity + stock);
+        window.alert(`${stock} ${product.name} stocked`);
     }
     return (
         <div className="p-10">
