@@ -16,6 +16,8 @@ import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+import RequireAuth from './Utilities/RequireAuth/RequireAuth';
+import VerifyEmail from './Pages/VerifyEmail/VerifyEmail';
 
 
 function App() {
@@ -31,10 +33,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
-            <Route path="/inventory" element={<Inventory />} />
-            <Route path="/inventory/add-new" element={<AddNewItem />} />
-            <Route path="/inventory/my-items" element={<MyItems />} />
-            <Route path="/inventory/:id" element={<ProductManage />} />
+            <Route path="/inventory" element={<RequireAuth><Inventory /></RequireAuth>} />
+            <Route path="/inventory/add-new" element={<RequireAuth><AddNewItem /></RequireAuth>} />
+            <Route path="/inventory/my-items" element={<RequireAuth><MyItems /></RequireAuth>} />
+            <Route path="/inventory/:id" element={<RequireAuth><ProductManage /></RequireAuth>} />
+            <Route path="/verify" element={<VerifyEmail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/*" element={<NotFound />} />

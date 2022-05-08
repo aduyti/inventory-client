@@ -69,18 +69,18 @@ const ProductManage = () => {
                             </div>
                             <div className="grid gap-4 grid-cols-2 py-5 px-5">
                                 <div className="">
-                                    <input type="number" className="block w-full border-2 rounded-lg border-gray-800 py-1 pl-4" defaultValue="1" min="1" onBlur={blurDeliver} />
+                                    <input type="number" className="block w-full border-2 rounded border-gray-800 py-1 pl-4" defaultValue="1" min="1" onBlur={blurDeliver} />
                                 </div>
                                 <div className="">
-                                    <button type="button" className="block w-full border-2 rounded-lg border-gray-800 py-1 font-bold hover:bg-slate-300" onClick={handleDeliver}>Deliver</button>
+                                    <button type="button" className="block w-full border-2 rounded-lg border-gray-800 py-1 font-bold bg-cyan-300 hover:bg-slate-300" onClick={handleDeliver}>Deliver</button>
                                 </div>
                             </div>
                             <div className="grid gap-4 grid-cols-2 pb-3 px-5">
                                 <div className="">
-                                    <input type="number" className="block w-full border-2 rounded-lg border-gray-800 py-1 pl-4" defaultValue="1" min="1" onBlur={blurStock} />
+                                    <input type="number" className="block w-full border-2 rounded border-gray-800 py-1 pl-4" defaultValue="1" min="1" onBlur={blurStock} />
                                 </div>
                                 <div className="">
-                                    <button type="button" className="block w-full border-2 rounded-lg border-gray-800 py-1 font-bold hover:bg-slate-300" onClick={handleStock}>Stock</button>
+                                    <button type="button" className="block w-full border-2 rounded-lg border-gray-800 py-1 font-bold bg-cyan-300 hover:bg-slate-300" onClick={handleStock}>Stock</button>
                                 </div>
                             </div>
                         </div>

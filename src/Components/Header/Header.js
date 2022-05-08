@@ -14,7 +14,7 @@ const Header = ({ menuState }) => {
                             : <MenuIcon className="h-8 w-8" />
                     }
                 </div>
-                <Link className="font-mono font-extrabold text-4xl text-cyan-500" to="/">Laptop <span className="text-lime-500">House</span></Link>
+                <Link className="font-mono font-extrabold text-4xl text-cyan-700" to="/">Laptop <span className="text-lime-700">House</span></Link>
             </div>
         </div>
     );
