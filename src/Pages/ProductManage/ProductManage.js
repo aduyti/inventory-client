@@ -1,7 +1,7 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Spinner from '../../Components/Spinner/Spinner';
+import updateItemQuantity from '../../Utilities/DBOperations/updateItemQuantity';
 import useProduct from '../../Utilities/Hooks/useProduct';
 
 const ProductManage = () => {
@@ -29,13 +29,6 @@ const ProductManage = () => {
         num > 0 ? setStock(num) :
             setAlert(event.target, setStock);
     }
-    const updateToDB = (newQuantity) => {
-        axios.put(`https://obscure-eyrie-55678.herokuapp.com/inventory/id/${product?._id}`, {
-            quantity: newQuantity
-        })
-            .then()
-
-    }
 
     const handleDeliver = () => {
         if (quantity < deliver) {
@@ -43,13 +36,13 @@ const ProductManage = () => {
         }
         else {
             setQuantity(quantity - deliver);
-            updateToDB(quantity - deliver);
+            updateItemQuantity(quantity - deliver, product?._id);
             window.alert(`${deliver} ${product.name} delivered`);
         }
     }
     const handleStock = () => {
         setQuantity(quantity + stock);
-        updateToDB(quantity + stock);
+        updateItemQuantity(quantity + stock, product?._id);
         window.alert(`${stock} ${product.name} stocked`);
     }
     return (
