@@ -13,8 +13,8 @@ const NavSideBar = ({ menuState }) => {
                 <CustomNavLink to="/">Home</CustomNavLink>
                 <CustomNavLink to="/blogs">Blogs</CustomNavLink>
                 <CustomNavLink to="/inventory">Inventory</CustomNavLink>
-                <CustomNavLink to="/inventory/my-items">My Items</CustomNavLink>
-                <CustomNavLink to="/inventory/add-new">Add Item</CustomNavLink>
+                <CustomNavLink to="/inventory/my-items">My Laptops</CustomNavLink>
+                <CustomNavLink to="/inventory/add-new">Add New</CustomNavLink>
                 <CustomNavLink to="/login">Login</CustomNavLink>
                 <CustomNavLink to="/register">Register</CustomNavLink>
                 <li className="block mx-3 px-auto py-2 rounded-lg hover:bg-slate-400/25 hover:text-cyan-400 cursor-pointer" onClick={() => {
