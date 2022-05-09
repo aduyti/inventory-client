@@ -14,14 +14,14 @@ const MyItems = () => {
     return (
         <div className="p-10">
             <h2 className={`text-3xl font-bold pb-8 ${products.length === 0 ? "text-red-600" : "text-cyan-600"} `}>{products.length === 0 ? "You Don't Have Any!" : "My Laptops"}</h2>
+            <Link to="/inventory/add-new" className="text-2xl font-bold pb-5 px-5 pt-4 text-lime-600 hover:text-cyan-700">
+                Add New Laptop<ArrowRightIcon className="inline w-6 h-6 px-1" />
+            </Link>
+
             {
                 products.length === 0 ?
                     <>
                         <Spinner />
-                        <Link to="/" className="text-2xl font-bold pb-3 px-5 pt-8 text-lime-600 hover:text-cyan-700">
-                            Go to Home<ArrowRightIcon className="inline w-6 h-6 px-1" />
-                        </Link>
-
                     </>
                     :
                     products.map(product => <ProductRow key={product._id} product={product} />)

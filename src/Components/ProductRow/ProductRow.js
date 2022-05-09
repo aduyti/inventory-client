@@ -7,8 +7,10 @@ const ProductRow = ({ product }) => {
     const { _id, name, price, quantity, supplier, image } = product;
     const navigate = useNavigate();
     const handleDelete = id => {
-        itemDelete(id);
-        window.location.reload();
+        if (window.confirm(`You want to delete ${name}`)) {
+            itemDelete(id);
+            window.location.reload();
+        }
     }
 
     return (

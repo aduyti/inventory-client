@@ -81,7 +81,7 @@ const ProductManage = () => {
                                     <input type="number" className="block w-full border-2 rounded border-gray-800 py-1 pl-4" defaultValue="1" min="1" onBlur={blurStock} />
                                 </div>
                                 <div className="">
-                                    <button type="button" className="block w-full border-2 rounded-lg border-gray-800 py-1 font-bold bg-cyan-300 hover:bg-slate-300" onClick={handleStock}>Stock</button>
+                                    <button type="button" className="block w-full border-2 rounded-lg border-gray-800 py-1 font-bold bg-cyan-300 hover:bg-slate-300" onClick={handleStock}>Restock</button>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ const ProductManage = () => {
                     <>
                         <h2 className="text-3xl font-bold text-red-600 pb-8">Laptop Not Available</h2>
                         <Spinner />
-                        <Link to="/" className="text-2xl font-bold pb-3 px-5 pt-8 text-lime-600 hover:text-cyan-700">
+                        <Link to="/" className=" text-2xl font-bold pb-3 px-5 pt-8 text-lime-600 hover:text-cyan-700">
                             Go to Home<ArrowRightIcon className="inline w-6 h-6 px-1" />
                         </Link>
 
