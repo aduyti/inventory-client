@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Spinner from '../../Components/Spinner/Spinner';
 import updateItemQuantity from '../../Utilities/DBOperations/updateItemQuantity';
 import useProduct from '../../Utilities/Hooks/useProduct';
 import { toast } from 'react-toastify';
+import { ArrowRightIcon } from '@heroicons/react/outline';
 
 const ProductManage = () => {
     const { id } = useParams();
@@ -88,6 +89,10 @@ const ProductManage = () => {
                     <>
                         <h2 className="text-3xl font-bold text-red-600 pb-8">Laptop Not Available</h2>
                         <Spinner />
+                        <Link to="/" className="text-2xl font-bold pb-3 px-5 pt-8 text-lime-600 hover:text-cyan-700">
+                            Go to Home<ArrowRightIcon className="inline w-6 h-6 px-1" />
+                        </Link>
+
                     </>
             }
         </div>

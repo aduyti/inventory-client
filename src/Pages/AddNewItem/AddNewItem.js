@@ -1,10 +1,13 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
 import addNewProduct from '../../Utilities/DBOperations/addNewProduct';
+import auth from '../../Utilities/Firebase/firebase.init';
 
 const AddNewItem = () => {
+    const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const addClicked = (data, event) => {
         const {
@@ -21,7 +24,7 @@ const AddNewItem = () => {
                 gpu,
                 display
             ],
-            ownerEmail: "mozibar@gmail.com"
+            ownerEmail: user.email
         };
         addNewProduct(product);
         toast("New Laptop added to Inventory");

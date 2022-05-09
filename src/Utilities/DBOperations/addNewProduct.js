@@ -11,6 +11,5 @@ const addNewProduct = (product) => {
         "image": product.image,
         "ownerEmail": product.ownerEmail
     })
-        .then()
 }
 export default addNewProduct;

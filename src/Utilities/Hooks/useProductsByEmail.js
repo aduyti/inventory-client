@@ -5,7 +5,11 @@ import axios from "axios";
 const useProductsByEmail = email => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        axios.get(`https://obscure-eyrie-55678.herokuapp.com/inventory/email/${email}`)
+        axios.get(`https://obscure-eyrie-55678.herokuapp.com/inventory/email/${email}`, {
+            headers: {
+                authorization: 'Bearer ' + localStorage.getItem('accessToken')
+            }
+        })
             .then(results => setProducts(results.data))
             .catch(err => console.error(err));
     }, [email])

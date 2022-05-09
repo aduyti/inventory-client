@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Utilities/Firebase/firebase.init';
 import Spinner from '../../Components/Spinner/Spinner';
 import ThirdPartyLogin from '../../Components/ThirdPartyLogin/ThirdPartyLogin';
+import axios from 'axios';
 
 
 const Login = () => {
@@ -24,9 +25,11 @@ const Login = () => {
     const [sendPasswordResetEmail, sending, passwordEmailError] = useSendPasswordResetEmail(
         auth
     );
-    const loginClick = data => {
+    const loginClick = async (data) => {
         const { loginEmail, loginPassword } = data;
-        signInWithEmailAndPassword(loginEmail, loginPassword)
+        await signInWithEmailAndPassword(loginEmail, loginPassword);
+        const result = await axios.post('https://obscure-eyrie-55678.herokuapp.com/login', { email: loginEmail });
+        localStorage.setItem('accessToken', result.data.token);
     }
     const forgotPasswordClick = async () => {
         const email = document.getElementsByClassName("email")[0].value;
