@@ -13,6 +13,7 @@
 - protected route for manage inventory
 - verified user for protected route
 - CURD operations
+- toast for messages and alerts
 
 
 ### PACKAGES & LIBRARIES
